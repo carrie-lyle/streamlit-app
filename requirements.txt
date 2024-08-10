@@ -1,6 +1,8 @@
-langchain==0.1.4
-langchain_community==0.0.16
-langchain_core==0.1.17
-langchain_openai==0.0.5
-python-dotenv==1.0.1
-streamlit==1.31.1
+streamlit==1.36.0
+pandas==1.5.3
+numpy==1.23.5
+folium==0.16.0
+streamlit-folium==0.21.1
+plotly==5.9.0
+pyforest==1.1.0
+scikit-learn==1.2.1
