@@ -7,9 +7,9 @@ from folium.plugins import HeatMap, MarkerCluster
 import plotly.express as px
 from pyforest import * 
 import io
+from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.compose import ColumnTransformer
 from sklearn import metrics
@@ -82,14 +82,6 @@ if uploaded_file is not None:
         if st.button("Train Model"):
             if model_name == 'Logistic Regression':
                 model = LogisticRegression(solver=param['solver'])
-            elif model_name == 'Decision Tree':
-                model = DecisionTreeRegressor(
-                    criterion=param.get('criterion', 'gini'),
-                    max_depth=param.get('max_depth', None),
-                    min_samples_split=param.get('min_samples_split', 2),
-                    min_samples_leaf=param.get('min_samples_leaf', 1),
-                    max_features=param.get('max_features', None)
-                )
             else:
                 model = KNeighborsClassifier(
                     n_neighbors=param['n_neighbors'],
